@@ -1,0 +1,36 @@
+$white-color: #ddd;
+$violet-color: #810081;
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  color: $white-color;
+
+  li {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid $white-color;
+
+    &.active {
+      font-weight: bold;
+      color: $violet-color;
+    }
+
+    &:hover {
+      background-color: #322E31;
+    }
+  }
+}
+
+.details {
+  margin-top: 10px;
+  padding: 15px;
+  color: $white-color;
+  text-align: center;
+  background-color: $violet-color;
+}

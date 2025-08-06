@@ -1,0 +1,46 @@
+<div class="controls">
+  <mat-form-field>
+    <mat-label>Поиск по имени</mat-label>
+    <input
+      matInput
+      type="text"
+      [ngModel]="searchQuery()"
+      (ngModelChange)="searchQuery.set($event)"
+      placeholder="Введите имя..."
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Статус</mat-label>
+    <mat-select
+      [ngModel]="filterStatus()"
+      (ngModelChange)="filterStatus.set($event)"
+    >
+      <mat-option value="all">Все</mat-option>
+      <mat-option value="active">Активные</mat-option>
+      <mat-option value="inactive">Неактивные</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div>
+  @if (filteredUsers().length > 0) {
+    <ul>
+      @for (user of filteredUsers(); track user.id) {
+        <li
+          (click)="selectUser(user.email)"
+          [class.active]="user.active"
+        >{{user.id}}. {{ user.name }} - {{ user.email }}</li>
+      }
+    </ul>
+  } @else {
+    <div class="details">
+      Ничего не найдено
+    </div>
+  }
+</div>
+
+@if (selectedEmail()) {
+  <div class="details">
+    Email: {{ selectedEmail() }}
+  </div>
+}
