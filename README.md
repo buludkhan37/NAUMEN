@@ -1,7 +1,5 @@
 # ListApp
 
-### This is a test assignment for the company NAUMEN
-
 ### This is a simple application that:
 
 1. Displays a list of users (an array of objects with the fields id, name, email, active).
@@ -21,6 +19,7 @@ npm run start
 ```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
+
 
 
 
